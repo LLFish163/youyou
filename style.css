@@ -3,6 +3,10 @@ body {
     margin: 0;
 }
 
+.gitalk-container {
+    margin-bottom: 2.5em;
+}
+
 .main-title {
     text-align:center;
     font-weight: 300;
