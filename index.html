@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
     <title>又又</title>
 </head>
 <body>
@@ -26,7 +28,22 @@
             </a>
         </li>
     </ul>
-    
+    <div id="gitalk-container"></div>
     <footer>powered by llfish</footer>
 </body>
+<script>
+    window.onload = () =>{
+        gitalk.render('gitalk-container')
+    }
+
+    const gitalk = new Gitalk({
+        clientID: 'adda85e570336487295e',
+        clientSecret: 'cc9a0f3dfd5405f5dd9d5bf2d4c924c7ac023b37',
+        repo: 'youyou_comments',      // The repository of store comments,
+        owner: 'LLFish163',
+        admin: ['LLFish163'],
+        id: location.pathname,      // Ensure uniqueness and length less than 50
+        distractionFreeMode: false,  // Facebook-like distraction free mode
+    })
+</script>
 </html>
