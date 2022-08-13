@@ -3,7 +3,7 @@ body {
     margin: 0;
 }
 
-.gitalk-container {
+#gitalk-container {
     margin-bottom: 2.5em;
 }
 
