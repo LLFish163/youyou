@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>又又的经典语录</title>
+
+    <style>
+        * {
+            user-select: none;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        .title1 {
+            text-align: center;
+            font-weight: 300;
+        }
+
+        .quotations {
+            display: flex;
+            flex-direction: column;
+            list-style: none;
+            padding: .5em;
+        }
+
+        .quotations > li {
+            border: 1px solid rgba(0,0,0,.06);
+            border-radius: 2px;
+            padding: .5em 1em;
+            margin-bottom: 1em;
+        }
+
+        .more-info {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .time-info, .space-info {
+            color: #00000073;
+            font-size: 14px;
+        }
+
+        .main-info {
+            display: block;
+            margin-block-start: 1em;
+            margin-block-end: 1em;
+            margin-inline-start: 0px;
+            margin-inline-end: 0px;
+            color: #000000d9;
+            position: relative;
+            font-size: 14px;
+            word-wrap: break-word;
+            user-select: all;
+        }
+
+        @font-face {
+            font-family: "iconfont"; /* Project id  */
+            src: url('iconfont.ttf?t=1660455571046') format('truetype');
+        }
+
+        .time-info::before {
+            font-family: "iconfont" !important;
+            font-size: 16px;
+            font-style: normal;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            margin-right: .25em;
+            
+            content: "\e616"
+        }
+
+        .space-info::before {
+            font-family: "iconfont" !important;
+            font-size: 16px;
+            font-style: normal;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            margin-right: .25em;
+            
+            content: "\e60a"
+        }
+    </style>
+</head>
+<body>
+    <h1 class="title1">又又的经典语录</h1>
+    <ul class="quotations">
+        <li>
+            <p class="main-info">可以后空翻</p>
+            <div class="more-info">
+                <div class="space-info">高中教室里</div>
+                <div class="time-info">远古时期</div>
+            </div>
+        </li>
+        <li>
+            <p class="main-info">LLFish太棒了，我要请他喝奶茶！！！</p>
+            <div class="more-info">
+                <div class="space-info">发自内心</div>
+                <div class="time-info">每一天</div>
+            </div>
+        </li>
+        <li>
+            <p class="main-info">未完待续......</p>
+        </li>
+    </ul>
+</body>
+</html>
