@@ -40,10 +40,6 @@
     <footer>powered by llfish</footer>
 </body>
 <script>
-    window.onload = () =>{
-        gitalk.render('gitalk-container')
-    }
-    
     const gitalk = new Gitalk({
         clientID: 'adda85e570336487295e',
         clientSecret: 'cc9a0f3dfd5405f5dd9d5bf2d4c924c7ac023b37',
@@ -54,5 +50,6 @@
         distractionFreeMode: false,  // Facebook-like distraction free mode
         proxy:'https://cors-server-ecru.vercel.app/github_access_token'
     })
+    gitalk.render('gitalk-container')
 </script>
 </html>
