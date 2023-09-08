@@ -44,7 +44,7 @@
 <!-- 使用 serveWoker 拦截请求并缓存 -->
 <script>
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/service_worker.js')
+  navigator.serviceWorker.register('./service_worker.js')
     .then(function(registration) {
       console.log('Service Worker 注册成功');
     })

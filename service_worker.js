@@ -1,6 +1,6 @@
 const version = 1;
 const cacheName = `font-cache-v${version}`;
-const fetch_later = ['/index.html'];
+const fetch_later = ['.html'];
 const black_list = ['/repos/LLFish163/youyou_comments/issues'];
 
 self.addEventListener('install', function (event) {
