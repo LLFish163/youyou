@@ -10,7 +10,6 @@ self.addEventListener('install', function (event) {
 self.addEventListener('fetch', function (event) {
   const request = event.request;
   const url = new URL(event.request.url);
-  console.log(url.pathname);
   const getCachedResponse = async request => {
     let cache = await caches.open(cacheName)
     return cache.match(request)
@@ -41,6 +40,8 @@ self.addEventListener('fetch', function (event) {
 
   function inBlackList(url) {
     if (url.protocol === 'chrome-extension:') return true;
+    if (url.hostname.includes('githubusercontent.com')) return true;
+
     const pathname = url.pathname;
     for (let d of black_list) {
       if (pathname.includes(d)) return true;
