@@ -5,42 +5,45 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
-    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
     <title>又又</title>
 </head>
 <body>
     <h1 class="main-title">又又的网页合集</h1>
-    <ul class="web-list">
-        <li>
-            <a href="1_box_of_huan/box_of_huan.html">
-                <img src="1_box_of_huan/index.gif">
-                <p class="web-title">又又的神秘宝盒</p>
-                <p class="web-info">2022/5/6 | 豆瓣评分: 9.9</p>
-            </a>
-        </li>
-
-        <li>
-            <a href="2_sql_of_girlfriend/Who-is-my-girl.html">
-                <img src="2_sql_of_girlfriend/index.jpg">
-                <p class="web-title">Who is my girl ?</p>
-                <p class="web-info">2022/7/26 | 豆瓣评分:100</p>
-            </a>
-        </li>
-
-        <li>
-            <a href="3_quotations_from_huan/quotations.html">
-                <img src="3_quotations_from_huan/index.jpg">
-                <p class="web-title">又又的经典语录</p>
-                <p class="web-info">2022/8/14 | 豆瓣评分:10.0</p>
-            </a>
-        </li>
-    </ul>
+    <ul class="web-list"></ul>
     <div id="gitalk-container"></div>
-    <footer>powered by llfish</footer>
+    <footer>powered by her favorite llfish</footer>
 </body>
 <script>
-    const gitalk = new Gitalk({
+    const infos = [
+        ['1_box_of_huan/box_of_huan.html', '1_box_of_huan/index.gif', '又又的神秘宝盒', '2022/5/6 | 豆瓣评分: 9.9'],
+        ['2_sql_of_girlfriend/Who-is-my-girl.html', '2_sql_of_girlfriend/index.jpg', 'Who is my girl ?', '2022/7/26 | 豆瓣评分:100'],
+        ['3_quotations_from_huan/quotations.html', '3_quotations_from_huan/index.jpg', '又又的经典语录', '2022/8/14 | 豆瓣评分:10.0']
+    ]
+    const renderInfo = render(infos);
+    const ul = document.querySelector('.web-list')
+    ul.innerHTML = renderInfo;
+
+    function render(infos) {
+        let inner = '';
+        for(let data of infos) {
+            inner += `\n
+            <li>
+                <a href="${data[0]}">
+                    <img src="${data[1]}">
+                    <p class="web-title">${data[2]}</p>
+                    <p class="web-info">${data[3]}</p>
+                </a>
+            </li>
+            `
+        }
+        return inner;
+    }
+</script>
+<script>
+    const script = document.createElement('script');
+    document.documentElement.appendChild(script);
+    script.onload = () => {
+        const gitalk = new Gitalk({
         clientID: 'adda85e570336487295e',
         clientSecret: 'cc9a0f3dfd5405f5dd9d5bf2d4c924c7ac023b37',
         repo: 'youyou_comments',      // The repository of store comments,
@@ -50,6 +53,13 @@
         distractionFreeMode: false,  // Facebook-like distraction free mode
         proxy:'https://cors-server-ecru.vercel.app/github_access_token'
     })
-    gitalk.render('gitalk-container')
+        gitalk.render('gitalk-container')
+    }
+    script.setAttribute('src', 'https://unpkg.com/gitalk/dist/gitalk.min.js');
+
+    const style = document.createElement('link');
+    document.documentElement.append(style);
+    style.setAttribute('rel', 'stylesheet');
+    style.setAttribute('href', 'https://unpkg.com/gitalk/dist/gitalk.css');
 </script>
 </html>
