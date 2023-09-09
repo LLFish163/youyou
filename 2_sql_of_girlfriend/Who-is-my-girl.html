@@ -6,13 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>最完美的女朋友</title>
     <style>
+        /* 移动端的样式 */
+        @media screen and (max-width: 767px) {
+            #celebrate > div, #celebrate img {
+                width: 40vw;
+            }
+        }
+
         body {
             margin: 0;
         }
 
         h1 {
             font-weight: 500;
-            letter-spacing: 1rem;
+            letter-spacing: .1rem;
             margin-bottom: 1em;
         }
 
@@ -212,6 +219,7 @@
 
         .main-content {
             display: flex;
+            flex-direction: column;
         }
 
         .main-content > div {
@@ -238,9 +246,9 @@
 
         #xiang-sa-nei > span {
             color: black;
-            font-size: 5em;
+            font-size: 3em;
             margin-bottom: 1em;
-            letter-spacing: 1rem;
+            letter-spacing: .21rem;
         }
 
         /* celebrate */
@@ -299,13 +307,13 @@
                 <div>
                     <img />
                 </div>
-                <div>
+                <div style="display:flex; flex-direction: row;">
                     <input type="button" onclick="nextImg()" value="下一个" />
                     <input type="button" onclick="selectImg()" value="就这个了" />
                 </div>
             </div>
             <div id="xiang-sa-nei" class="not-display">
-                <span>想啥呢！！！</span>
+                <span>想啥呢!!!</span>
                 <input type="button" onclick="apologize()" value="错了错了"/>
             </div>
         </div>
@@ -324,7 +332,6 @@
     /**     初始化       **/
     let celeImgs = document.querySelectorAll('#celebrate img');
     celeImgs.forEach(e => {
-        console.log(e)
         e.src = getImg3();
     })
 
@@ -394,7 +401,6 @@
     /** 共用函数 **/
 
     function changeState(s) {
-        console.log('change', s)
 
         // 设置显示样式
         for(let id of [0, 1, 2, 3]) {
