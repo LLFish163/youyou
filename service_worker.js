@@ -51,7 +51,7 @@ self.addEventListener('fetch', function (event) {
 
   function needFetchLater(url) {
     for (let d of fetch_later) {
-      if (d.endsWith(url.pathname)) return true;
+      if (url.pathname.endsWith(d)) return true;
     }
     return false;
   }
